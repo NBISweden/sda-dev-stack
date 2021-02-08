@@ -33,7 +33,7 @@
 
 - name: download rke
   get_url:
-    url: 'https://github.com/rancher/rke/releases/download/v{{rke_version}}/rke_darwin-amd64'
+    url: 'https://github.com/rancher/rke/releases/download/v{{rke_version}}/rke_linux-amd64'
     dest: '/usr/local/bin/rke'
     mode: 0755
     checksum: "{{rke_checksum}}"
