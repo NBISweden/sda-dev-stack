@@ -1,7 +1,9 @@
 ---
-kubectl_binary: 'https://storage.googleapis.com/kubernetes-release/release/v1.17.1/bin/linux/amd64/kubectl'
+kubectl_version: '1.17.1'
 kubectl_install_target: '/usr/local/bin/kubectl'
-helm_binary: 'https://get.helm.sh/helm-v3.0.2-linux-amd64.tar.gz'
+helm_version: '3.0.2'
 helm_checksum: 'sha256:c6b7aa7e4ffc66e8abb4be328f71d48c643cb8f398d95c74d075cfb348710e1d'
 helm_install_target: '/usr/local/bin/'
+rke_version: '1.2.5'
+rke_checksum: '77d2dc6af0d9388cba7dddea9ce3339d8e99618a32da68d043018ef63840bc6f'
 vagrant_home: '/home/vagrant'

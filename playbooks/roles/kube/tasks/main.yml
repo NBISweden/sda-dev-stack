@@ -1,6 +1,6 @@
 - name: download kubectl
   get_url:
-    url: '{{ kubectl_binary }}'
+    url: 'https://storage.googleapis.com/kubernetes-release/release/v{{kubectl_version}}/bin/linux/amd64/kubectl'
     dest: '{{ kubectl_install_target }}'
     mode: 0755
 
@@ -12,7 +12,7 @@
 
 - name: download helm
   get_url:
-    url: '{{ helm_binary }}'
+    url: 'https://get.helm.sh/helm-v{{helm_version}}-linux-amd64.tar.gz'
     dest: '/tmp/helm.tar.gz'
     mode: 0755
     checksum: '{{ helm_checksum }}'
@@ -30,6 +30,13 @@
     dest: '{{ helm_install_target }}'
     mode: 0755
     remote_src: yes
+
+- name: download rke
+  get_url:
+    url: 'https://github.com/rancher/rke/releases/download/v{{rke_version}}/rke_darwin-amd64'
+    dest: '/usr/local/bin/rke'
+    mode: 0755
+    checksum: "{{rke_checksum}}"
 
 - name: recursively change permissions of k8s folders
   file:
