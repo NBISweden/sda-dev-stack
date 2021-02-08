@@ -1,5 +1,5 @@
 ---
-terraform_binary: 'https://releases.hashicorp.com/terraform/0.12.30/terraform_0.12.30_linux_amd64.zip'
+terraform_version: '0.12.30'
 terraform_install_target: '/usr/local/bin/terraform'
 terraform_checksum: 'sha256:a646b61232ac0c400ec8cc2c062f4e36b5a9e8515f11f7f5f61eb03fe058f18d'
 vagrant_home: '/home/vagrant'
