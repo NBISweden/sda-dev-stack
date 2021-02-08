@@ -1,0 +1,3 @@
+- name: Install Openstack dependencies
+  pip:
+    name: ['python-openstackclient=={{os_client_version}}','keystone=={{keystone_version}}', 'neutron=={{neutron_version}}']

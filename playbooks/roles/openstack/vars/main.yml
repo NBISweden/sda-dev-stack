@@ -1,0 +1,4 @@
+---
+os_client_version: "5.3.0"
+neutron_version: "17.0.0"
+keystone_version: "17.0.0"

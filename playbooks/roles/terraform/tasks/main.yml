@@ -1,0 +1,20 @@
+- name: download terraform
+  get_url:
+    url: '{{ terraform_binary }}'
+    dest: '/tmp/terraform.zip'
+    mode: 0755
+    checksum: '{{ terraform_checksum }}'
+
+- name: unarchive terraform
+  unarchive:
+    src: '/tmp/terraform.zip'
+    remote_src: true
+    dest: '/tmp'
+    mode: 0755
+
+- name: copy terraform binary
+  copy:
+    src: /tmp/terraform
+    dest: '{{ terraform_install_target }}'
+    mode: 0755
+    remote_src: yes
