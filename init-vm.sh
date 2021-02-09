@@ -9,5 +9,6 @@ git clone git@github.com:NBISweden/LocalEGA-SE-Deployment.git -b "master"
 
 cd ../
 
-vagrant up --provision
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
+vagrant up --provision --provider virtualbox
