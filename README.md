@@ -15,4 +15,6 @@ You should be able to download the installation files for your operating system 
 In order to spin up the dev stack run:
 ```command
 bash init-vm.sh
+vagrant ssh
+> cd /vagrant/
 ```
