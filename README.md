@@ -6,7 +6,7 @@ You should be able to download the installation files for your operating system 
 
 - Vagrant: https://www.vagrantup.com/downloads.html
 - VirtualBox v6.0: https://www.virtualbox.org/wiki/Downloads
-- Installing the Virtual Boz guest additions plugin
+- Installing the VirtualBox guest additions plugin
 
 ```command
 vagrant plugin install vagrant-vbguest
