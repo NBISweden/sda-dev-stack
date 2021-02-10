@@ -5,9 +5,9 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure("2") do |devbox|
 
-  devbox.vm.box = "debian/buster64"
-  devbox.vm.box_version = "10.4.0"
-  devbox.vm.synced_folder ".", "/vagrant", type: "rsync"
+  devbox.vm.box = "hashicorp/bionic64"
+  devbox.vm.box_version = "1.0.282"
+  devbox.vm.synced_folder ".", "/vagrant", type: "virtualbox"
   devbox.vm.network "private_network", ip: "10.0.0.2"
   devbox.vm.network "forwarded_port", guest: 31114, host: 31114, auto_correct: true
 
