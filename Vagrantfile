@@ -5,8 +5,8 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure("2") do |devbox|
 
-  devbox.vm.box = "hashicorp/bionic64"
-  devbox.vm.box_version = "1.0.282"
+  devbox.vm.box = "ubuntu/bionic64"
+  devbox.vm.box_version = "20210210.0.0"
   devbox.vm.synced_folder ".", "/vagrant", type: "virtualbox"
   devbox.vm.network "private_network", ip: "10.0.0.2"
   devbox.vm.network "forwarded_port", guest: 31114, host: 31114, auto_correct: true
@@ -30,13 +30,16 @@ SCRIPT
 
   # Provider config
   devbox.vm.provider "virtualbox" do |vb|
-    vb.cpus = 4
-    vb.memory = 16384
+    vb.customize ['modifyvm', :id, '--ioapic', 'on']
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+    vb.cpus = 2
+    vb.memory = 8192
     vb.linked_clone = true
   end
   devbox.vm.provider "libvirt" do |libvirt|
-    libvirt.cpus = 4
-    libvirt.memory = 16384
+    libvirt.cpus = 2
+    libvirt.memory = 8192
     libvirt.nested = true
     libvirt.machine_virtual_size = 100
   end
