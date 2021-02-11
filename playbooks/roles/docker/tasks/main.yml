@@ -5,7 +5,7 @@
 
 - name: add docker gpg key
   apt_key:
-    url: https://download.docker.com/linux/debian/gpg
+    url: https://download.docker.com/linux/ubuntu/gpg
     state: present
 
 - name: add docker gpg repository
