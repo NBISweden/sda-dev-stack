@@ -14,8 +14,9 @@ Vagrant.configure("2") do |devbox|
   # Install basic dependencies
   devbox.vm.provision :shell, :keep_color => true, :inline => <<SCRIPT
   sudo apt update
-  sudo apt install python3-pip -yq
+  sudo apt install python3-pip openjdk-8-jdk -yq
   pip3 install ansible
+  pip3 install --upgrade setuptools pip
   ansible --version
   exit 0
 SCRIPT
