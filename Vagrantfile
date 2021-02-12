@@ -5,7 +5,7 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure("2") do |devbox|
 
-  devbox.vm.box = "ubuntu/bionic64"
+  devbox.vm.box = "ubuntu/focal64"
   devbox.vm.box_version = "20210210.0.0"
   devbox.vm.synced_folder ".", "/vagrant", type: "virtualbox"
   devbox.vm.network "private_network", ip: "10.0.0.2"
@@ -15,9 +15,9 @@ Vagrant.configure("2") do |devbox|
   devbox.vm.provision :shell, :keep_color => true, :inline => <<SCRIPT
   sudo apt update
   sudo apt install python3-pip openjdk-8-jdk -yq
-  pip3 install ansible
   pip3 install --upgrade setuptools pip
-  bash install install-sda-deps.sh
+  pip3 install ansible
+  bash /vagrant/install-sda-deps.sh
   exit 0
 SCRIPT
 
