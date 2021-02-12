@@ -17,7 +17,7 @@ Vagrant.configure("2") do |devbox|
   sudo apt install python3-pip openjdk-8-jdk -yq
   pip3 install ansible
   pip3 install --upgrade setuptools pip
-  ansible --version
+  bash install install-sda-deps.sh
   exit 0
 SCRIPT
 
