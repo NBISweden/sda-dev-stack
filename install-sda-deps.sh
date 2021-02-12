@@ -11,4 +11,5 @@ if [ ! -d sda-deploy-init ]; then
   git clone https://github.com/neicnordic/sda-deploy-init
 fi
 
-pip3 install sda-deploy-init/ s3cmd
+pip3 install testresources
+pip3 install sda-deploy-init/ s3cmd --ignore-installed
