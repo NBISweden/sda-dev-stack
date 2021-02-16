@@ -17,16 +17,17 @@ Vagrant.configure("2") do |devbox|
   sudo apt install python3-pip openjdk-8-jdk -yq
   pip3 install --upgrade setuptools pip
   pip3 install ansible
-  bash /vagrant/install-sda-deps.sh
   exit 0
 SCRIPT
 
-  # Install ansible playbooks
+  # Install ansible playbooks and sda deps
   devbox.vm.provision :shell, :keep_color => true, :privileged => false, :inline => <<SCRIPT
   export ANSIBLE_FORCE_COLOR=true
   export PYTHONUNBUFFERED=1
   echo "Running ansible playbooks..."
   ansible-playbook /vagrant/playbooks/main.yml
+  echo "Installing sda deps..."
+  bash /vagrant/install-sda-deps.sh
 SCRIPT
 
   # Provider config

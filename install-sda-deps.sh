@@ -12,4 +12,4 @@ if [ ! -d sda-deploy-init ]; then
 fi
 
 pip3 install testresources
-pip3 install sda-deploy-init/ s3cmd --ignore-installed
+pip3 install sda-deploy-init/ s3cmd
