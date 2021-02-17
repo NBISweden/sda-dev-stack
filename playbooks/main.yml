@@ -31,8 +31,8 @@
   vars:
     machine_host: 'devbox'
   roles:
+     - { role: docker, become: true }
      - { role: hostname, become: true }
      - { role: terraform, become: true }
      - { role: openstack, become: true }
      - { role: kube, become: true }
-     - { role: docker, become: true }
