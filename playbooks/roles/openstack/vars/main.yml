@@ -2,4 +2,4 @@
 os_client_version: "5.4.0"
 nova_version: "17.3.0"
 neutron_version: "17.1.0"
-keystone_version: "18.0.0 "
+keystone_version: "18.0.0"
