@@ -23,3 +23,19 @@ bash init-vm.sh
 vagrant ssh
 > cd /vagrant/
 ```
+
+## macOS Big Sur
+
+If you are using this OS, you may well need to fix some permission settings before successfully spinning the VM. Follow these steps:
+
+- Fix permissions in preferences -> security & privacy (click the lock icon, then "allow permissions" for Oracle)
+- Restart your computer
+```command
+sudo reboot
+```
+- Restart VirtualBox by doing:
+```command
+sudo "/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh" restart  
+```
+
+ 
