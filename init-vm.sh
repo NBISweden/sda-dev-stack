@@ -1,13 +1,13 @@
-if [ -n "$1" ]; then project=$1; else project="test-sda"; fi
+#!/bin/bash
+
+# set the variable $project to "test-sda" if no argument is given
+project=${1:-test-sda}
 
 mkdir -p $project
 
-cd $project
-
-git clone https://github.com/neicnordic/sda-helm -b "master"
-git clone git@github.com:NBISweden/LocalEGA-SE-Deployment.git -b "master"
-
-cd ../
+# Clone repositories into the directory defined by the $project variable
+git clone https://github.com/neicnordic/sda-helm -b "master" $project
+git clone git@github.com:NBISweden/LocalEGA-SE-Deployment.git -b "master" $project
 
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 

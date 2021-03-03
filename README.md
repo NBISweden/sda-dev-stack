@@ -4,7 +4,7 @@
 
 You should be able to download the installation files for your operating system here:
 
-- Vagrant: https://www.vagrantup.com/downloads.html
+- Vagrant (tested with version 2.2.14): https://www.vagrantup.com/downloads.html
 - VirtualBox v6.0: https://www.virtualbox.org/wiki/Downloads
 - Installing the VirtualBox guest additions plugin
 
@@ -19,10 +19,14 @@ vagrant plugin install vagrant-vbguest
 In order to spin up the dev stack run:
 
 ```command
-bash init-vm.sh
+./init-vm.sh
 vagrant ssh
 > cd /vagrant/
 ```
+
+The `init-vm.sh` script takes an optional argument to set the name of the directory that 
+the `sda-helm` and `LocalEGA-SE-Deployment` repositories will be cloned into. The default is 
+set to `test-sda`.
 
 ## macOS Big Sur
 
@@ -37,5 +41,3 @@ sudo reboot
 ```command
 sudo "/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh" restart  
 ```
-
- 
